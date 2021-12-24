@@ -39,10 +39,10 @@ function App() {
       }, [country]);
       
       let events = []
-      if(event!=null)
+      if(false)
       {
         let Color="yellow";
-        for(let i=0; i<55; i++)
+        for(let i=0; i<event.response.holidays.length; i++)
         {
           if(event.response.holidays[i].type[0]==="Common local holiday")
           {
