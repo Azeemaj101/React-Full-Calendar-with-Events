@@ -19,7 +19,7 @@ function App() {
     let event = useSelector(state => state.event)
     const dispatch = useDispatch()
     const {Event} = bindActionCreators(actionCreators,dispatch);
-    if(!localStorage.getItem("month") || !localStorage.getItem("year"))
+    if(!localStorage.getItem("month") || !localStorage.getItem("year") || localStorage.getItem("month") === "101")
     {
       let date1 =new Date();
       month = date1.getMonth()+1;
