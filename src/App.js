@@ -42,7 +42,7 @@ function App() {
       if(event!=null)
       {
         let Color="yellow";
-        for(let i=0; i<event.response.holidays.length; i++)
+        for(let i=0; i<55; i++)
         {
           if(event.response.holidays[i].type[0]==="Common local holiday")
           {
