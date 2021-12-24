@@ -19,7 +19,14 @@ function App() {
     let event = useSelector(state => state.event)
     const dispatch = useDispatch()
     const {Event} = bindActionCreators(actionCreators,dispatch);
-    
+    if(!localStorage.getItem("month") || !localStorage.getItem("year"))
+    {
+      let date1 =new Date();
+      month = date1.getMonth()+1;
+      year = date1.getFullYear();
+      localStorage.setItem("month", month);
+      localStorage.setItem("year", year);
+    }
     month = localStorage.getItem("month");
     year = localStorage.getItem("year");
     if(month === "101" )
@@ -39,7 +46,7 @@ function App() {
       }, [country]);
       
       let events = []
-      if(false)
+      if(event != null)
       {
         let Color="yellow";
         for(let i=0; i<event.response.holidays.length; i++)
